@@ -1,6 +1,6 @@
 
 
-document.title = "Windows 11 Pro | AmlaHardk";
+document.title = "SOLIDWORKS | AmlaHardk";
 
 
 async function fetchSimilarProducts() {
