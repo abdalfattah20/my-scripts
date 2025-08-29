@@ -1,14 +1,8 @@
-const images = Array.from(document.querySelectorAll('.thumbnail')).map(thumb => thumb.src);
-    const mainImage = document.getElementById('mainImage');
-
-    // إضافة حدث click لكل thumbnail
-    document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
-        thumb.addEventListener('click', () => {
-            // تحديث الصورة الرئيسية
-            mainImage.src = images[index];
-            // إزالة class active من كل الthumbnails
-            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
-            // إضافة active للthumbnail المختار
-            thumb.classList.add('active');
-        });
-    });
+document.querySelectorAll('.thumbnail').forEach(thumb => {
+                            thumb.addEventListener('click', () => {
+                                const mainImage = document.getElementById('mainImage');
+                                const tempSrc = mainImage.src;
+                                mainImage.src = thumb.src;
+                                thumb.src = tempSrc; // تبديل مع الرئيسية أو فقط نسخ (يمكن تعديل حسب الحاجة)
+                            });
+                        });
