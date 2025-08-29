@@ -1,8 +1,11 @@
-document.querySelectorAll('.thumbnail').forEach(thumb => {
+ document.querySelectorAll('.thumbnail').forEach(thumb => {
                             thumb.addEventListener('click', () => {
+                                // إزالة class active من كل الthumbnails
+                                document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                                // إضافة active للthumbnail المختار
+                                thumb.classList.add('active');
+                                // تغيير الصورة الرئيسية
                                 const mainImage = document.getElementById('mainImage');
-                                const tempSrc = mainImage.src;
                                 mainImage.src = thumb.src;
-                                thumb.src = tempSrc; // تبديل مع الرئيسية أو فقط نسخ (يمكن تعديل حسب الحاجة)
                             });
                         });
